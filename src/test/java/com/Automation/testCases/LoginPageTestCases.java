@@ -24,6 +24,13 @@ public class LoginPageTestCases extends BaseClass
 		initialize();
 		loginpageobj= new LoginPage(driver);
 	}
+	
+	@AfterMethod
+	public void teardown()
+	{
+		driverQuit();
+	}
+	
 	@Test(priority=1)
 	public void verifyTitleTest()
 	{
@@ -48,9 +55,5 @@ public class LoginPageTestCases extends BaseClass
 		homepageobj= loginpageobj.loginToApplication(conf.getUsername(),conf.getPassword());
 	}
 	
-	@AfterMethod
-	public void teardown()
-	{
-		driverQuit();
-	}
+	
 }

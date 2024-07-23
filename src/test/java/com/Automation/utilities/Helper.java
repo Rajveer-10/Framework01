@@ -10,9 +10,16 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.PageFactory;
 
-public class Helper {
+public class Helper extends BaseClass{
 	
+	
+	WebDriver driver;
+	public Helper(WebDriver hdriver)
+	{
+		this.driver=hdriver;
+	}
 	public static long implicitwaittime=15;
 	
 
@@ -30,5 +37,10 @@ public class Helper {
 		DateFormat customformat = new SimpleDateFormat("DD_MM_YYYY_HH_mm_ss");
 		Date currentdate= new Date();
 		return customformat.format(currentdate);
+	}
+	
+	public void switchToFrame(String framename) 
+	{
+		driver.switchTo().frame(framename);
 	}
 }
