@@ -52,7 +52,7 @@ public class LoginPage extends BaseClass {
 			username.sendKeys(name);
 			password.sendKeys(pwd);
 			loginbtn.click();
-			return new HomePage();
+			return new HomePage(driver);
 		}
 			public boolean verifyimage()
 			{
